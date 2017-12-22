@@ -1,0 +1,34 @@
+<!--<ul>
+    <li ng-repeat="empleado in $ctrl.datos.empleados">
+        <span>{{empleado.nombre}}</span>
+        <p>{{empleado.ciudad}}</p>
+    </li>
+</ul>-->
+<h1>Empleados de la empresa</h1>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Puesto</th>
+            <th>Legajo</th>
+            <th>Ciudad</th>
+            <th>Sueldo</th>
+        </tr>
+        <tr>
+            <th><input type="text" ng-model="buscar.nombre" class="form-control"></th>
+            <th><input type="text" ng-model="buscar.puesto" class="form-control"></th>
+            <th><input type="text" ng-model="buscar.legajo" class="form-control"></th>
+            <th><input type="text" ng-model="buscar.ciudad" class="form-control"></th>
+            <th><input type="text" ng-model="buscar.sueldo" class="form-control"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="empleado in $ctrl.datos.empleados | filter: buscar">
+            <td>{{empleado.nombre }}</td>
+            <td>{{empleado.puesto}}</td>
+            <td>{{empleado.legajo}}</td>
+            <td>{{empleado.ciudad}}</td>
+            <td>{{empleado.sueldo}}</td>
+        </tr>
+    </tbody>
+</table>

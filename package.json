@@ -1,0 +1,17 @@
+{
+  "name": "angularjs_clase4",
+  "version": "1.0.0",
+  "description": "Clase numero 4 del curso de AngularJS",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ulrich",
+  "license": "ISC",
+  "dependencies": {
+    "angular":"1.6.8",
+    "bootstrap":"3.3.7",
+    "jquery": "latest",
+    "angular-route": "1.6.x"
+  }
+}
