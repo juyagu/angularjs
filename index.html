@@ -8,12 +8,11 @@
     <title>Empleados</title>
 </head>
 <body>
-    <div class="container">
-        <listado-empleados></listado-empleados>
-    </div>
+    <div ng-view></div>
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/app.config.js"></script>
     <script src="app/listado-empleados/listado-empleados.module.js"></script>
     <script src="app/listado-empleados/empleados.component.js"></script>
 </body>
