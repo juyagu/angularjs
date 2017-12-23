@@ -8,12 +8,17 @@
     <title>Empleados</title>
 </head>
 <body>
-    <div ng-view></div>
-
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    
     <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/app.config.js"></script>
     <script src="app/listado-empleados/listado-empleados.module.js"></script>
     <script src="app/listado-empleados/empleados.component.js"></script>
+    <script src="app/empleado-detalle/empleado-detalle.module.js"></script>
+    <script src="app/empleado-detalle/empleado-detalle.component.js"></script>
 </body>
 </html>

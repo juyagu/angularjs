@@ -1,1 +1,1 @@
-angular.module('empeladosApp',['listadoEmpleados']);
+angular.module('empeladosApp',['listadoEmpleados','ngRoute','empleadoDetalle']);

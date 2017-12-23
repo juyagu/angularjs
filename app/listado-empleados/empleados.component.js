@@ -2,14 +2,18 @@ angular.
     module('listadoEmpleados')
     .component('listadoEmpleados', {
         templateUrl: 'app/listado-empleados/listado-empleados.template.html',
-        controller: ['$http', 
-            function ListadoEmpleadosController($http) {
+        controller: ['$http','$location', 
+            function ListadoEmpleadosController($http,$location) {
                 var self = this;
 
                 $http.get('empleados/tabla.json?v=1').then(function(response){
                     self.datos = response.data;
-                    console.log(self.datos.empleados);
                 });
+
+                self.detalle = function(empleado){
+                    console.log(empleado);
+                    $location.path('empleados/' + empleado);
+                }
             }
         ]
     });
