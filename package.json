@@ -12,6 +12,7 @@
     "angular": "1.6.8",
     "bootstrap": "3.3.7",
     "jquery": "latest",
-    "angular-route": "1.6.x"
+    "angular-route": "1.6.x",
+    "angular-resource": "1.6.x"
   }
 }
