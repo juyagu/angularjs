@@ -9,8 +9,8 @@
   "author": "Ulrich",
   "license": "ISC",
   "dependencies": {
-    "angular":"1.6.8",
-    "bootstrap":"3.3.7",
+    "angular": "1.6.8",
+    "bootstrap": "3.3.7",
     "jquery": "latest",
     "angular-route": "1.6.x"
   }
