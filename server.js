@@ -1,6 +1,7 @@
 var http = require('http');
 var querystring = require('querystring');
 var fs = require('fs');
+var tabla = require('./empleados/tabla.json');
 
 http.createServer(function (req, res) {
      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8080');
@@ -35,26 +36,13 @@ http.createServer(function (req, res) {
     if(req.method === "POST"){
         
         req.on('data',function(data){
-            var idSuper = data.toString();
-            var cadena = "";
-            if(idSuper === "1"){
-                cadena = '<li class="list-group-item">Superman</li>'+
-                        '<li class="list-group-item">Batman</li>'+
-                        '<li class="list-group-item">Aquaman</li>' +
-                        '<li class="list-group-item">Mujer Maravilla</li>';
-            } else if(idSuper === "2"){
-                cadena = '<li class="list-group-item">Wolverine</li>' +
-                        '<li class="list-group-item">Profesor Xavier</li>' +
-                        '<li class="list-group-item">Magneto</li>';                        
-            } else if(idSuper === "3"){
-                cadena = '<li class="list-group-item">Iron Man</li>' +
-                        '<li class="list-group-item">Thor</li>'+
-                        '<li class="list-group-item">Hulk</li>';
-            } else {
-                cadena = '<li class="list-group-item">No hay superheroes disponibles</li>';
-            }
-            res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(cadena);
+            var empleado = JSON.parse(data);
+            var legajo = empleado.legajo;
+            console.log(legajo);
+            var lib = JSON.parse(fs.readFileSync('empleados/tabla.json','utf8'));
+            
+            /*res.writeHead(200, {'Content-Type': 'text/plain'});
+            res.end(cadena);*/
         });
     }
 }).listen(3000, "127.0.0.1");

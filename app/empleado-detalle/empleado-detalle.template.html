@@ -26,6 +26,7 @@
             <input type="text" class="form-control" name="sueldo" ng-model="$ctrl.empleado.sueldo">
         </div>
         <hr>
-        <button class="btn btn-success">Enviar</button>
+        <button class="btn btn-success" ng-click="$ctrl.fnMod()">Enviar</button>
+        <button class="btn btn-danger" ng-click="$ctrl.fnBack()">Volver</button>
     </form>
 </div>
