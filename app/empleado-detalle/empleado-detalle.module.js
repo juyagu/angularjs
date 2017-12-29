@@ -1,2 +1,2 @@
 angular
-    .module('empleadoDetalle',['ngRoute']);
+    .module('empleadoDetalle',['ngRoute','core-empleados']);

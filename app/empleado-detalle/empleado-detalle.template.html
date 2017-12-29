@@ -1,0 +1,31 @@
+<h1>Modificar Empleado</h1>
+<div class="col-md-6">
+    <form action="">
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control" name="nombre" ng-model="$ctrl.empleado.nombre">
+        </div>
+        <div class="form-group">
+            <label for="">Puesto</label>
+            <input type="text" class="form-control" name="puesto" ng-model="$ctrl.empleado.puesto">
+        </div>
+        <div class="form-group">
+            <label for="">Ciudad</label>
+            <input type="text" class="form-control" name="cuidad" ng-model="$ctrl.empleado.ciudad">
+        </div>
+        <div class="form-group">
+            <label for="">Legajo</label>
+            <input type="text" class="form-control" name="legajo" ng-model="$ctrl.empleado.legajo" readonly>
+        </div>
+        <div class="form-group">
+            <label for="">Fecha de Ingreso</label>
+            <input type="text" class="form-control" name="f_ingreso" ng-model="$ctrl.empleado.fecha_ingreso" readonly>
+        </div>
+        <div class="form-group">
+            <label for="">Sueldo</label>
+            <input type="text" class="form-control" name="sueldo" ng-model="$ctrl.empleado.sueldo">
+        </div>
+        <hr>
+        <button class="btn btn-success">Enviar</button>
+    </form>
+</div>
