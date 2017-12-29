@@ -23,7 +23,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="empleado in $ctrl.datos.empleados | filter: buscar" ng-click="$ctrl.detalle(empleado.legajo)">
+        <tr ng-repeat="empleado in $ctrl.empleados | filter: buscar" ng-click="$ctrl.detalle(empleado.legajo)">
             <td>{{empleado.nombre }}</td>
             <td>{{empleado.puesto}}</td>
             <td>{{empleado.legajo}}</td>

@@ -1,1 +1,1 @@
-angular.module('listadoEmpleados',[]);
+angular.module('listadoEmpleados',['core-empleados']);
