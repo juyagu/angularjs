@@ -15,6 +15,10 @@ angular.
                     console.log(empleado);
                     $location.path('empleados/' + empleado);
                 }
+
+                self.goFrm = function(){
+                    $location.path('formulario/');
+                }
             }
         ]
     });

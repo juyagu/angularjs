@@ -11,6 +11,9 @@ angular
                 .when('/empleados/:empleado',{
                     template: '<empleado-detalle></empleado-detalle>'
                 })
+                .when('/formulario',{
+                    template:'<app-formulario></app-formulario>'
+                })
                 .otherwise('/empleados');
         }
     ]);

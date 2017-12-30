@@ -1,0 +1,36 @@
+<div class="col-md-5">
+    <div class="form-area">
+        <form role="form" name="userForm" novalidate="" class="css-form">
+            <br style="clear:both">
+            <h3 style="margin-bottom: 25px; text-align: center;">Formulario de Contacto</h3>
+            <div class="form-group" ng-class="{'has-error': userForm.name.$touched && userForm.name.$invalid, 'has-success': !userForm.name.$invalid}">
+                <input type="text" class="form-control css-nombre" id="name" name="name" placeholder="Nombre" ng-model="$ctrl.usuario.name"
+                    required>
+                <span ng-show="userForm.name.$touched && userForm.name.$error.required" class="help-inline">
+                            Requerido</span>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" ng-model="$ctrl.usuario.email" required>
+                <p><span ng-show="userForm.email.$touched && userForm.email.$error.required">El email es obligatorio.</span></p>
+                <p><span ng-show="userForm.email.$touched && userForm.email.$error.email">El email posee caracteres inválidos.</span></p>
+            </div>
+            <div class="form-group">
+                <input type="number" ng-model="$ctrl.usuario.celular" class="form-control" id="celular" name="celular" placeholder="Numero de Celular"
+                    required>
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="$ctrl.usuario.subject" class="form-control" id="subject" name="subject" placeholder="Asunto"
+                    required>
+            </div>
+            <div class="form-group" ng-class="{'has-error': userForm.message.$touched && userForm.message.$invalid}">
+                <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Mensaje" ng-maxlength="140" rows="7"
+                    ng-model="$ctrl.usuario.message"></textarea>
+                <span ng-show="!userForm.message.$invalid">{{140 - $ctrl.usuario.message.length}} caracteres restantes</span>
+                <span ng-show="userForm.message.$invalid">Demasiados Caracteres</span>
+            </div>
+
+            <button type="button" id="submit" name="submit" class="btn btn-primary pull-right" ng-disabled="userForm.$pristine || (userForm.$dirty && userForm.$invalid)">Enviar Formulario</button>
+        </form>
+    </div>
+</div>
+<pre>user = {{$ctrl.usuario | json}}</pre>
