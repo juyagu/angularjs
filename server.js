@@ -5,6 +5,7 @@ var tabla = require('./empleados/tabla.json');
 
 http.createServer(function (req, res) {
      res.setHeader('Access-Control-Allow-Origin', 'http://127.0.0.1:8080');
+     
      var obj = JSON.parse(fs.readFileSync('empleados/tabla.json','utf8'));
      var empleados = obj.empleados;
 
@@ -33,16 +34,27 @@ http.createServer(function (req, res) {
             res.end('no existe');
         }*/
     }
-    if(req.method === "POST"){
-        
+    if(req.method === "OPTIONS"){
         req.on('data',function(data){
             var empleado = JSON.parse(data);
             var legajo = empleado.legajo;
-            console.log(legajo);
             var lib = JSON.parse(fs.readFileSync('empleados/tabla.json','utf8'));
-            
-            /*res.writeHead(200, {'Content-Type': 'text/plain'});
-            res.end(cadena);*/
+            for(var i =0;i< lib.empleados.length;i++){
+                if(lib.empleados[i].legajo === legajo){
+                    lib.empleados[i].nombre = empleado.nombre;
+                    lib.empleados[i].puesto = empleado.puesto;
+                    lib.empleados[i].ciudad = empleado.ciudad;
+                    lib.empleados[i].sueldo = empleado.sueldo;
+                }
+            }
+            fs.writeFile('empleados/tabla.json',JSON.stringify(lib),'utf8',function(err){
+                if(err){
+                    console.log(err);
+                }
+                console.log("Archivo guardado correctamente");
+            });
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            res.end(JSON.stringify(lib));
         });
     }
 }).listen(3000, "127.0.0.1");
