@@ -12,7 +12,7 @@
     "angular": "1.6.8",
     "angular-resource": "1.6.x",
     "angular-route": "1.6.x",
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.1",
     "jquery": "latest",
     "nodemon": "^1.14.5"
   }
